@@ -8,7 +8,7 @@ public class Main {
 
         System.out.println("\t\t\t===============================================");
         System.out.println("\t\t\t==         Welcome to Foodtify,              ==");
-        System.out.println("\t\t\t==          Easy Order, Feeling Better          ==");
+        System.out.println("\t\t\t==      Easy Order, Feeling Better           ==");
         System.out.println("\t\t\t==  Your favorite food, now just click away  ==");
         System.out.println("\t\t\t==                                           ==");
         System.out.println("\t\t\t==  Login :                                  ==");
@@ -19,7 +19,7 @@ public class Main {
         System.out.print("\t\t\tYour choice : ");
         int choice = input.nextInt();
 
-        switch(choice){
+        switch (choice){
             case 1:
                 adminLogin();
                 break;
@@ -82,11 +82,26 @@ public class Main {
         System.out.println("\n\t\t\tHello "+name+", you are logged in as Customer");
         System.out.println("\t\t\t===============================================");
         System.out.println("\t\t\t==  1. Buat Pesanan                          ==");
-        System.out.println("\t\t\t==  2. Lihat Pesanan                         ==");
-        System.out.println("\t\t\t==  3. Back                                  ==");
+        System.out.println("\t\t\t==  2. Back                                  ==");
         System.out.println("\t\t\t===============================================");
 
         System.out.print("\t\t\tYour choice : ");
         int choice = input.nextInt();
     }
+
+    public static void pilihRestoran(){
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("\t\t\t===============================================");
+        System.out.println("\t\t\t==  Restaurant List:                         ==");
+        System.out.println("\t\t\t==  1. IndoResto                             ==");
+        System.out.println("\t\t\t==  2. JapanResto                            ==");
+        System.out.println("\t\t\t==  3. WestResto                             ==");
+        System.out.println("\t\t\t===============================================");
+
+        System.out.print("\t\t\tYour choice : ");
+        int choice = input.nextInt();
+
+    }
 }
+
