@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
-        //Menampilkan tampilan awal program Food Order
+        //Menampilkan tampilan awal program Food Order..
 
         System.out.println("\t\t\t===============================================");
         System.out.println("\t\t\t==         Welcome to Foodtify,              ==");
