@@ -102,6 +102,51 @@ public class Main {
         System.out.print("\t\t\tYour choice : ");
         int choice = input.nextInt();
 
+        switch(choice){
+            case 1:
+                //call Indo Resto di class restoran, id resto 001
+                /*
+                System.out.println("\t\t\t===============================================");
+                System.out.println("\t\t\t==  IndoResto Menu:                          ==");
+                System.out.println("\t\t\t==  1. Nasi Goreng  - Rp 25.000              ==");
+                System.out.println("\t\t\t==  2. Ayam Goreng  - Rp 30.000              ==");
+                System.out.println("\t\t\t==  3. Ayam Bakar   - Rp 30.000              ==");
+                System.out.println("\t\t\t==  4. Gudeg        - Rp 20.000              ==");
+                System.out.println("\t\t\t==  5. Nasi Pecel   - Rp 25.000              ==");
+                System.out.println("\t\t\t==  6. Es Teh       - Rp 10.000              ==");
+                System.out.println("\t\t\t==  7. Es Jeruk     - Rp 10.000              ==");
+                System.out.println("\t\t\t===============================================");
+                 */
+            case 2:
+                //call Japan Resto di class restoran, id resto 002
+                   /*
+                System.out.println("\t\t\t===============================================");
+                System.out.println("\t\t\t==  JapanResto Menu:                         ==");
+                System.out.println("\t\t\t==  1. Sushi        - Rp 30.000              ==");
+                System.out.println("\t\t\t==  2. Ramen        - Rp 35.000              ==");
+                System.out.println("\t\t\t==  3. Takoyaki     - Rp 25.000              ==");
+                System.out.println("\t\t\t==  4. Sashimi      - Rp 35.000              ==");
+                System.out.println("\t\t\t==  5. Onigiri      - Rp 20.000              ==");
+                System.out.println("\t\t\t==  6. Green Tea    - Rp 25.000              ==");
+                System.out.println("\t\t\t==  7. Calpis       - Rp 20.000              ==");
+                System.out.println("\t\t\t===============================================");
+                 */
+            case 3:
+                //call West Resto di class restoran, id resto 003
+                   /*
+                System.out.println("\t\t\t===============================================");
+                System.out.println("\t\t\t==  WestResto Menu:                          ==");
+                System.out.println("\t\t\t==  1. Hamburger    - Rp 30.000              ==");
+                System.out.println("\t\t\t==  2. Pizza        - Rp 45.000              ==");
+                System.out.println("\t\t\t==  3. Steak        - Rp 55.000              ==");
+                System.out.println("\t\t\t==  4. Spaghetti    - Rp 35.000              ==");
+                System.out.println("\t\t\t==  5. Salad        - Rp 30.000              ==");
+                System.out.println("\t\t\t==  6. Cola         - Rp 15.000              ==");
+                System.out.println("\t\t\t==  7. Americano    - Rp 20.000              ==");
+                System.out.println("\t\t\t===============================================");
+                 */
+        }
+
     }
 }
 
