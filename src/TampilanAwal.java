@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class TampilanAwal{
     public static void main(String[] args){
+       awal();
+    }
+
+    public static void awal(){
         Scanner input = new Scanner(System.in);
         Login masuk = new Login();
         //Menampilkan tampilan awal program Food Order..
@@ -21,7 +25,7 @@ public class TampilanAwal{
 
         switch (choice){
             case 1:
-               masuk.adminLogin();
+                masuk.adminLogin();
                 break;
             case 2:
                 masuk.customerLogin();
@@ -30,6 +34,5 @@ public class TampilanAwal{
                 System.out.println("Invalid Choice. Please Try Again (Number 1/2)");
         }
     }
-
 }
 
