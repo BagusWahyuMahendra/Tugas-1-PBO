@@ -8,7 +8,8 @@ public class TampilanAwal{
 
     public static void awal(){
         Scanner input = new Scanner(System.in);
-        Login masuk = new Login();
+        Customer cust = new Customer();
+        Admin admin = new Admin();
         //Menampilkan tampilan awal program Food Order..
 
         System.out.println("\t\t\t===============================================");
@@ -26,10 +27,10 @@ public class TampilanAwal{
 
         switch (choice){
             case 1:
-                masuk.adminLogin();
+                admin.adminLogin();
                 break;
             case 2:
-                masuk.customerLogin();
+                cust.menuCustomer();
                 break;
             default:
                 System.out.println("Invalid Choice. Please Try Again (Number 1/2)");

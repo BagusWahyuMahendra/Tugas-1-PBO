@@ -15,7 +15,7 @@ public class Customer {
                 System.out.println("\t\t\t==  Menu :                                   ==");
                 System.out.println("\t\t\t==  1. Sign Up                               ==");
                 System.out.println("\t\t\t==  2. Login                                 ==");
-                System.out.println("\t\t\t==  3. Keluar                                ==");
+                System.out.println("\t\t\t==  3. Back                                  ==");
                 System.out.println("\t\t\t===============================================");
 
                 int choice = scanner.nextInt();
@@ -24,9 +24,14 @@ public class Customer {
                 switch (choice) {
                     case 1:
                         signup(scanner);
+                        menuCustomer();
                         break;
                     case 2:
                         login(scanner);
+                        running = false;
+
+                        //call daftar restaurant dan menu-menu
+                        buatPesanan();
                         break;
                     case 3:
                         running = false;
@@ -49,9 +54,10 @@ public class Customer {
             String password = scanner.nextLine();
 
             if (users.containsKey(username) && users.get(username).equals(password)) {  //memeriksa apakah username dan password sesuai
-                System.out.println("Login berhasil!");
+                System.out.println("Login successfully!");
             } else {
-                System.out.println("Login gagal, silakan coba lagi.");
+                System.out.println("Login unsuccessfully, please try again.");
+                login(scanner);
             }
         }
 
@@ -59,13 +65,38 @@ public class Customer {
             System.out.print("Username: ");
             String username = scanner.nextLine();
             if (users.containsKey(username)) {  //memeriksa apakah username sudah terdaftar
-                System.out.println("Username sudah terdaftar, silakan coba lagi.");
+                System.out.println("Username already registered, please try again.");
                 return;
             }
             System.out.print("Password: ");
             String password = scanner.nextLine();
             users.put(username, password);  //menambahkan data user baru ke dalam HashMap
-            System.out.println("Sign up berhasil! Silakan login.");
+            System.out.println("Signup was successful! Please login.");
+        }
+
+        public static void buatPesanan(){
+        Scanner scanner = new Scanner(System.in);
+        TampilanAwal awal = new TampilanAwal();
+
+            System.out.println("\t\t\t===============================================");
+            System.out.println("\t\t\t==  1. Buat Pesanan                          ==");
+            System.out.println("\t\t\t==  2. Back                                  ==");
+            System.out.println("\t\t\t===============================================");
+
+            System.out.print("\t\t\tYour choice : ");
+            int choice = scanner.nextInt();
+
+            if(choice==1){
+                ListRestaurant restaurantList = new ListRestaurant();
+                restaurantList.displayRestaurants();
+            }
+            else if(choice==2){
+                awal.awal();
+            }
+            else{
+                System.out.println("Invalid choice, Try Again!");
+                buatPesanan();
+            }
         }
     }
 

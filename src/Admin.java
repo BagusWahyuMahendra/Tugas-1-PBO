@@ -1,48 +1,45 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Admin {
     private String username;
     private String password;
+    private static Scanner scanner = new Scanner(System.in);
+    //private static ArrayList<String> customers = new ArrayList<String>();
+    private static ArrayList<String> admins = new ArrayList<String>();
 
     public Admin(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
+    public Admin() {
+
+    }
+
     public boolean login(String username, String password) {
         return this.username.equals(username) && this.password.equals(password);
     }
 
-    /*public static void tugasAdmin() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("\t\t\t===============================================");
-        System.out.println("\t\t\t==  1. Lihat Restaurant                      ==");
-        System.out.println("\t\t\t==  2. Tambah Restaurant                     ==");
-        System.out.println("\t\t\t==  3. Hapus Restaurant                      ==");
-        System.out.println("\t\t\t==  4. Back                                  ==");
-        System.out.println("\t\t\t===============================================");
+    public static void adminLogin() {
+        Admin admin = new Admin("baguswahyu", "2205551002");
+        ListRestaurant tugasAdmin = new ListRestaurant();
 
-        System.out.print("\t\t\tYour choice : ");
-        int choice = input.nextInt();
+        System.out.println("\t\t\tInput Username and Password");
+        System.out.println("Username : ");
+        String adminUsername = scanner.nextLine();
+        System.out.println("Password : ");
+        String adminPassword = scanner.nextLine();
 
-        switch (choice) {
-            case 1:
-                //call lihat restaurant
-                break;
-            case 2:
-                //call tambah restaurant
-                break;
-            case 3:
-                //call hapus restaurant
-                break;
-            case 4:
-                //main();
-                break;
-            default:
-                System.out.println("Invalid Choice. Please Try Again (Number 1-4)");
+
+        if (admin.login(adminUsername, adminPassword)) {
+            System.out.println("\n\n\t\t\tHello, you are logged in as Admin");
+            tugasAdmin.adminCekResto();
+        } else {
+            System.out.println("Username or password Invalid!");
+            System.out.println("Try Again");
+            adminLogin();
         }
     }
-
-     */
-
 }
+
