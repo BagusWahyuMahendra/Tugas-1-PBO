@@ -32,13 +32,9 @@ public class Login {
         Scanner input = new Scanner(System.in);
         TampilanAwal awal = new TampilanAwal();
 
-        System.out.println("\n\nYour Name : ");
-        String name = input.nextLine();
-        System.out.println("Your Address : ");
-        String address = input.nextLine();
+        Customer menu = new Customer();
+        menu.menuCustomer();
 
-
-        System.out.println("\n\t\t\tHello "+name+", you are logged in as Customer");
         System.out.println("\t\t\t===============================================");
         System.out.println("\t\t\t==  1. Buat Pesanan                          ==");
         System.out.println("\t\t\t==  2. Back                                  ==");
@@ -48,7 +44,8 @@ public class Login {
         int choice = input.nextInt();
 
         if(choice==1){
-            //call buatPesanan
+            ListRestaurant restaurantList = new ListRestaurant();
+            restaurantList.displayRestaurants();
         }
         else if(choice==2){
             awal.awal();

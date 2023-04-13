@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class TampilanAwal{
     public static void main(String[] args){
        awal();
@@ -32,6 +33,7 @@ public class TampilanAwal{
                 break;
             default:
                 System.out.println("Invalid Choice. Please Try Again (Number 1/2)");
+                awal();
         }
     }
 }
