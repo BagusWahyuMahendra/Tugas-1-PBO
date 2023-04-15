@@ -125,7 +125,7 @@ public class Admin {
             switch (choice) {
                 case 1:
                     admin.viewRestaurants();
-                    admin.viewMenus();
+                    //admin.viewMenus();
                     break;
                 case 2:
                     admin.addRestaurant();
