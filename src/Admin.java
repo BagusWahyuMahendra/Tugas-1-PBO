@@ -1,13 +1,18 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Admin {
     private String username;
     private String password;
     private static Scanner scanner = new Scanner(System.in);
-    //private static ArrayList<String> customers = new ArrayList<String>();
     private static ArrayList<String> admins = new ArrayList<String>();
-    private RestaurantManager restaurantManager;
+    public static HashMap<String, Restaurant> restaurants = new HashMap<>();
+
+    public static HashMap<String, Restaurant> getRestaurants(){
+
+        return restaurants;
+    }
 
     public Admin(String username, String password) {
         this.username = username;
@@ -23,90 +28,54 @@ public class Admin {
         Admin admin = new Admin("baguswahyu", "2205551002");
 
         System.out.println("\t\t\tInput Username and Password");
-        System.out.print("Username : ");
+        System.out.print("\t\t\tUsername : ");
         String adminUsername = scanner.nextLine();
-        System.out.print("Password : ");
+        System.out.print("\t\t\tPassword : ");
         String adminPassword = scanner.nextLine();
 
         //Melakukan pengecekan terhadap username dan password yang diinputkan
         if (admin.login(adminUsername, adminPassword)) {
             System.out.println("\n\n\t\t\tHello, you are logged in as Admin");
-            //tugasAdmin.adminCekResto();
             tugasAdmin();
         } else {
-            System.out.println("Username or password Invalid!");
-            System.out.println("Try Again");
+            System.out.println("\t\t\tUsername or password Invalid!");
+            System.out.println("\t\t\tTry Again");
             adminLogin();
         }
     }
+    public static void inisiasiRestaurant(){
+        // inisialisasi data restaurant
+        Restaurant restaurant1 = new Restaurant("IndoResto", "Jl. Leko No. 35, Badung");
+        restaurant1.addMenu(new Menu("Nasi Goreng", 25000));
+        restaurant1.addMenu(new Menu("Ayam Goreng", 20000));
+        restaurant1.addMenu(new Menu("Ayam Bakar", 25000));
+        restaurant1.addMenu(new Menu("Nasi Kuning Manado", 40000));
+        restaurant1.addMenu(new Menu("Es Teh", 10000));
+        restaurant1.addMenu(new Menu("Es Jeruk", 12000));
+
+        Restaurant restaurant2 = new Restaurant("JapanResto", "Jl. Mawar No. 100, Tabanan");
+        restaurant2.addMenu(new Menu("Sushi", 35000));
+        restaurant2.addMenu(new Menu("Sashimi", 40000));
+        restaurant2.addMenu(new Menu("Takoyaki", 35000));
+        restaurant2.addMenu(new Menu("Onigiri", 20000));
+        restaurant2.addMenu(new Menu("Ocha", 15000));
+        restaurant2.addMenu(new Menu("Green Tea", 25000));
+
+        Restaurant restaurant3 = new Restaurant("WesternResto", "Jl. Kemerdekaan No. 112, Denpasar");
+        restaurant3.addMenu(new Menu("Hamburger", 30000));
+        restaurant3.addMenu(new Menu("Pizza", 50000));
+        restaurant3.addMenu(new Menu("Steak", 55000));
+        restaurant3.addMenu(new Menu("Fried Fries", 18000));
+        restaurant3.addMenu(new Menu("Bakso Ayam", 18000));
+        restaurant3.addMenu(new Menu("Bakso Ayam", 18000));
 
 
-    public Admin(RestaurantManager restaurantManager) {
-        this.restaurantManager = restaurantManager;
+        // Menambahkan data restaurant ke dalam HashMap
+        restaurants.put("IndoResto", restaurant1);
+        restaurants.put("JapanResto", restaurant2);
+        restaurants.put("WesternResto", restaurant3);
     }
-
-    public static void viewRestaurants() {
-
-        RestaurantManager.printRestaurants();
-    }
-
-    public static void viewMenus() {
-
-        RestaurantManager.printMenus();
-    }
-
-    public void addRestaurant() {
-        Scanner scanner = new Scanner(System.in);
-
-        //Memasukkan nama dan alamat restaurant yang ingin ditambahkan
-        System.out.print("Enter restaurant name: ");
-        String name = scanner.nextLine();
-        System.out.print("Enter restaurant address: ");
-        String address = scanner.nextLine();
-        Restaurant restaurant = new Restaurant(name, address);
-        restaurantManager.addRestaurant(restaurant);
-        System.out.println("Restaurant added successfully!");
-        System.out.println("Add Menus :");
-        do{
-            System.out.println("Choose Food/Drink ");
-            String category = scanner.nextLine();
-            System.out.print("Enter menu name: ");
-            String nameMenu = scanner.nextLine();
-            System.out.print("Enter price menu: ");
-            double price = scanner.nextInt();
-            if (category.equals("Food") || category.equals("food")) {
-                 restaurant.addMenu(new Menu(nameMenu,price,true));
-
-            }else if(category.equals("Drink") || category.equals("drink")){
-                 restaurant.addMenu(new Menu(nameMenu,price,false));
-            }
-            System.out.println("Add More Menu");
-            System.out.println("1. Yes \n2. No");
-            int ulang = scanner.nextInt();
-            if(ulang==2){
-                break;
-            }
-        }while(true);
-    }
-
-    public void removeRestaurant() {
-        Scanner scanner = new Scanner(System.in);
-
-        //Menghapus restaurant dengan memilih nomor yang sesuai dengan restaurant list
-        System.out.print("Enter the number of the restaurant you want to remove: ");
-        int index = scanner.nextInt() - 1;
-        restaurantManager.removeRestaurant(index);
-        System.out.println("Restaurant removed successfully!");
-    }
-
     public static void tugasAdmin() {
-        RestaurantManager restaurantManager = new RestaurantManager();
-        Admin admin = new Admin(restaurantManager);
-
-        //Memasukkan atau addRestaurant dengan nama dan alamat resto
-        restaurantManager.addRestaurant(new Restaurant("IndoResto", "Denpasar, Bali"));
-        restaurantManager.addRestaurant(new Restaurant("JapanResto", "Tabanan, Bali"));
-        restaurantManager.addRestaurant(new Restaurant("WesternResto", "Badung, Bali"));
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -119,30 +88,78 @@ public class Admin {
             System.out.println("\t\t\t==  0. Exit                                  ==");
             System.out.println("\t\t\t===============================================");
 
-            System.out.print("Enter your choice: ");
+            System.out.print("\t\t\tEnter your choice: ");
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    admin.viewRestaurants();
-                    //admin.viewMenus();
+                    viewRestaurants();
                     break;
                 case 2:
-                    admin.addRestaurant();
+                    addRestaurant();
                     break;
                 case 3:
-                    admin.removeRestaurant();
+                    removeRestaurant();
                     break;
                 case 4:
-                    TampilanAwal back = new TampilanAwal();
-                    back.awal();
+                    TampilanAwal.awal();
                     break;
                 case 0:
                     System.exit(0);
                 default:
-                    System.out.println("Invalid choice!");
+                    System.out.println("\t\t\tInvalid choice!");
             }
         }
     }
+
+    public static void viewRestaurants(){
+        System.out.println("\n");
+        System.out.println("====           Restaurant List           =====");
+        for (String restaurantName : restaurants.keySet()) {
+            System.out.println(restaurantName + ", " + restaurants.get(restaurantName).getAddress());
+            System.out.println("*Menu*");
+            for (Menu menu : restaurants.get(restaurantName).getMenus()) {
+                System.out.println(menu.getName() +      "\t ---- " + menu.getPrice());
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+
+    public static void addRestaurant(){
+        Scanner masukkan = new Scanner(System.in);
+
+        System.out.print("\t\t\tEnter restaurant name: ");
+        String name = masukkan.nextLine();
+        System.out.print("\t\t\tEnter restaurant address: ");
+        String address = masukkan.nextLine();
+        Restaurant newRestaurant = new Restaurant(name, address);
+        String inputUlang = "";
+        while (!inputUlang.equals("stop")) {
+            System.out.print("\t\t\tEnter menu (ex input format: menuName--menuPrice), input \"stop\" to finish: ");
+            inputUlang = masukkan.nextLine();
+            if (!inputUlang.equals("stop")) {
+                String[] menuData = inputUlang.split("--");
+                newRestaurant.addMenu(new Menu(menuData[0], Integer.parseInt(menuData[1])));
+            }
+        }
+        restaurants.put(name, newRestaurant);
+        System.out.println("\t\t\tRestaurant added successfully");
+    }
+
+    public static void removeRestaurant(){
+        Scanner masukkan = new Scanner(System.in);
+
+        System.out.print("\t\t\tEnter restaurant name: ");
+        String restaurantName = masukkan.nextLine();
+        if (restaurants.containsKey(restaurantName)) {
+            restaurants.remove(restaurantName);
+            System.out.println("\t\t\tRestaurant deleted successfully");
+        } else {
+            System.out.println("\t\t\tRestaurant not found");
+        }
+    }
+
+
 }
 

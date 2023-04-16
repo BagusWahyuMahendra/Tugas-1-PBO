@@ -1,27 +1,35 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Restaurant {
-    private String id;
     private String name;
     private String address;
+    private ArrayList<Menu> menus;
 
-
-    public Restaurant(String id, String name, String address) {
-        this.id = id;
+    public Restaurant(String name, String address) {
         this.name = name;
         this.address = address;
-    }
-
-    public String getId() {
-        return this.id;
+        this.menus = new ArrayList<>();
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getAddress() {
-        return this.address;
+        return address;
     }
+
+    @Override
+    public String toString() {
+        return name +" "+ address;
+    }
+    public ArrayList<Menu> getMenus(){
+
+        return this.menus;
+    }
+    public void addMenu(Menu menu){
+
+        this.menus.add(menu);
+    }
+
 }

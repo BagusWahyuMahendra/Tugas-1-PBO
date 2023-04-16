@@ -31,8 +31,17 @@ public class Order {
         for (Menu menu : this.menus.keySet()) {
             totalPrice += menu.getPrice() * this.menus.get(menu);
         }
-        totalPrice = totalPrice + this.jarak * 5000; // assume delivery cost is 1000 per km
+        totalPrice = totalPrice + this.jarak * 10000; // assume delivery cost is 1000 per km
         return totalPrice;
+    }
+
+    public void addMenu(Menu menu, int quantity) {
+        if (this.menus.containsKey(menu)) {
+            int currentQuantity = this.menus.get(menu);
+            this.menus.put(menu, currentQuantity + quantity);
+        } else {
+            this.menus.put(menu, quantity);
+        }
     }
 
 }
