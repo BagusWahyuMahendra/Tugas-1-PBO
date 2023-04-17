@@ -126,9 +126,11 @@ public class Admin {
     public static void viewRestaurants(){
         System.out.println("\n");
         System.out.println("\t\t\t====           Restaurant List           =====\n");
+        //For Loop untuk menampilkan daftar restaurant
         for (String restaurantName : restaurants.keySet()) {
             System.out.println("\t\t\t** " +restaurantName + ", " + restaurants.get(restaurantName).getAddress()) ;
             System.out.println("\t\t\t====                Menu                 =====");
+            //Foor Loop untuk menampilkan daftar menu
             for (Menu menu : restaurants.get(restaurantName).getMenus()) {
                 System.out.println("\t\t\t" + menu.getName() + "                        \t-- Rp " + menu.getPrice() + ",-");
             }
@@ -148,6 +150,8 @@ public class Admin {
         String address = masukkan.nextLine();
         Restaurant newRestaurant = new Restaurant(name, address);
         String inputUlang = "";
+
+        //Melakukan perulangan untuk memasukkan menu pada restaurant
         while (!inputUlang.equals("stop")) {
             System.out.print("\t\t\tEnter menu (ex input format: menuName--menuPrice), input \"stop\" to finish: ");
             inputUlang = masukkan.nextLine();
