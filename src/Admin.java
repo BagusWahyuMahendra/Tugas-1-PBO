@@ -14,6 +14,7 @@ public class Admin {
         return restaurants;
     }
 
+    //Method khusus (Constructor)
     public Admin(String username, String password) {
         this.username = username;
         this.password = password;
@@ -45,6 +46,8 @@ public class Admin {
     }
     public static void inisiasiRestaurant(){
         // inisialisasi data restaurant
+
+        //Menginisiasi objek restaurant 1
         Restaurant restaurant1 = new Restaurant("IndoResto", "Jl. Leko No. 35, Badung");
         restaurant1.addMenu(new Menu("Nasi Goreng", 25000));
         restaurant1.addMenu(new Menu("Ayam Goreng", 20000));
@@ -53,6 +56,7 @@ public class Admin {
         restaurant1.addMenu(new Menu("Es Teh", 10000));
         restaurant1.addMenu(new Menu("Es Jeruk", 12000));
 
+        //Menginisiasi objek restaurant 2
         Restaurant restaurant2 = new Restaurant("JapanResto", "Jl. Mawar No. 100, Tabanan");
         restaurant2.addMenu(new Menu("Sushi", 35000));
         restaurant2.addMenu(new Menu("Sashimi", 40000));
@@ -61,13 +65,14 @@ public class Admin {
         restaurant2.addMenu(new Menu("Ocha", 15000));
         restaurant2.addMenu(new Menu("Green Tea", 25000));
 
+        //Menginisiasi objek restaurant 3
         Restaurant restaurant3 = new Restaurant("WesternResto", "Jl. Kemerdekaan No. 112, Denpasar");
         restaurant3.addMenu(new Menu("Hamburger", 30000));
         restaurant3.addMenu(new Menu("Pizza", 50000));
         restaurant3.addMenu(new Menu("Steak", 55000));
         restaurant3.addMenu(new Menu("Fried Fries", 18000));
-        restaurant3.addMenu(new Menu("Bakso Ayam", 18000));
-        restaurant3.addMenu(new Menu("Bakso Ayam", 18000));
+        restaurant3.addMenu(new Menu("Soda", 20000));
+        restaurant3.addMenu(new Menu("Americano", 25000));
 
 
         // Menambahkan data restaurant ke dalam HashMap
@@ -93,18 +98,23 @@ public class Admin {
 
             switch (choice) {
                 case 1:
+                    //Memanggil method viewRestaurant untuk dapat memunculkan daftar restoran
                     viewRestaurants();
                     break;
                 case 2:
+                    //Memanggil method addRestaurant untuk dapat menambahkan restoran dan menunya
                     addRestaurant();
                     break;
                 case 3:
+                    //Memanggil method removeRestaurant untuk dapat menghapus restoran
                     removeRestaurant();
                     break;
                 case 4:
+                    //Memanggil method awal pada class TampilanAwal
                     TampilanAwal.awal();
                     break;
                 case 0:
+                    //Keluar atau exit
                     System.exit(0);
                 default:
                     System.out.println("\t\t\tInvalid choice!");
@@ -112,20 +122,23 @@ public class Admin {
         }
     }
 
+    //Method yang digunakan untuk menampilkan daftar restoran yang telah diinisiasi sebelumnya
     public static void viewRestaurants(){
         System.out.println("\n");
-        System.out.println("====           Restaurant List           =====");
+        System.out.println("\t\t\t====           Restaurant List           =====\n");
         for (String restaurantName : restaurants.keySet()) {
-            System.out.println(restaurantName + ", " + restaurants.get(restaurantName).getAddress());
-            System.out.println("*Menu*");
+            System.out.println("\t\t\t** " +restaurantName + ", " + restaurants.get(restaurantName).getAddress()) ;
+            System.out.println("\t\t\t====                Menu                 =====");
             for (Menu menu : restaurants.get(restaurantName).getMenus()) {
-                System.out.println(menu.getName() +      "\t ---- " + menu.getPrice());
+                System.out.println("\t\t\t" + menu.getName() + "                        \t-- Rp " + menu.getPrice() + ",-");
             }
+            System.out.println("\t\t\t===============================================");
             System.out.println("");
         }
         System.out.println("");
     }
 
+    //Method yang digunakkan untuk menambahkan restoran ke dalam Hash Map
     public static void addRestaurant(){
         Scanner masukkan = new Scanner(System.in);
 
@@ -144,9 +157,10 @@ public class Admin {
             }
         }
         restaurants.put(name, newRestaurant);
-        System.out.println("\t\t\tRestaurant added successfully");
+        System.out.println("\t\t\tRestaurant added successfully\n\n");
     }
 
+    //Method yang digunakan untuk menghapus restoran dengan memasukkan nama restoran yang ingin dihapus
     public static void removeRestaurant(){
         Scanner masukkan = new Scanner(System.in);
 
@@ -154,7 +168,7 @@ public class Admin {
         String restaurantName = masukkan.nextLine();
         if (restaurants.containsKey(restaurantName)) {
             restaurants.remove(restaurantName);
-            System.out.println("\t\t\tRestaurant deleted successfully");
+            System.out.println("\t\t\tRestaurant deleted successfully\n\n");
         } else {
             System.out.println("\t\t\tRestaurant not found");
         }

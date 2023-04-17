@@ -58,10 +58,10 @@ public class Customer {
             String password = scanner.nextLine();
 
             if (users.containsKey(username) && users.get(username).equals(password)) {  //memeriksa apakah username dan password sesuai
-                System.out.println("\t\t\tLogin successfully!");
+                System.out.println("\t\t\tLogin successfully!\n\n");
                 i=1;
             } else {
-                System.out.println("\t\t\tLogin unsuccessfully, please try again.");
+                System.out.println("\t\t\tLogin unsuccessfully, please try again.\n\n");
             }
         }while(i==0);
     }
@@ -76,7 +76,7 @@ public class Customer {
         System.out.print("\t\t\tPassword: ");
         String password = scanner.nextLine();
         users.put(username, password);  //menambahkan data user baru ke dalam HashMap
-        System.out.println("\t\t\tSignup was successful! Please login.");
+        System.out.println("\t\t\tSignup was successful! Please login.\n\n");
     }
 
     public static void makeOrder() {
@@ -94,14 +94,16 @@ public class Customer {
 
             System.out.print("\t\t\tYour choice : ");
             pilihan = scanner.nextInt();
+            scanner.nextLine();
             switch (pilihan) {
                 case 1:
                     Scanner input = new Scanner(System.in);
 
-                    System.out.println("==== Restaurants ====");
+                    System.out.println("\n\n\t\t\t================ Restaurants ==================");
                     for (String restaurantName : restaurants.keySet()) {
-                        System.out.println(			restaurantName + " - " + restaurants.get(restaurantName).getAddress());
+                        System.out.println("\t\t\t"+restaurantName + " --- " + restaurants.get(restaurantName).getAddress());
                     }
+                    System.out.println("\t\t\t===============================================");
                     System.out.print("\t\t\tEnter restaurant name: ");
                     String restaurantName = input.nextLine();
                     if (!restaurants.containsKey(restaurantName)) {
@@ -114,13 +116,14 @@ public class Customer {
 
                     String menuInput = "";
                     while (!menuInput.equals("n")) {
-                        System.out.println("==== " + restaurant.getName() + " ====");
-                        System.out.println("\t\t\tMenu:");
+                        System.out.println("\n\n\t\t\t=======\t\t " + restaurant.getName() + " \t\t=======");
+                        System.out.println("\t\t\t=================== Menu ======================");
                         int menuNumber = 1;
                         for (Menu menu : restaurant.getMenus()) {
-                            System.out.println(menuNumber + ". " + menu.getName() + " - " + menu.getPrice());
+                            System.out.println("\t\t\t"+menuNumber + "\t-" + menu.getName() + "\t- " + menu.getPrice());
                             menuNumber++;
                         }
+                        System.out.println("\t\t\t===============================================");
                         System.out.print("\t\t\tEnter menu number: ");
                         int menuIndex = input.nextInt();
                         System.out.print("\t\t\tEnter quantity: ");
@@ -129,7 +132,7 @@ public class Customer {
 
                         newOrder.addMenu(restaurant.getMenus().get(menuIndex - 1), quantity);
 
-                        System.out.print("\t\t\tAdd more menu? (y/n): ");
+                        System.out.print("\n\t\t\tAdd more menu? (y/n): ");
                         menuInput = input.nextLine();
                     }
 
@@ -142,17 +145,28 @@ public class Customer {
 
                     break;
                 case 2:
-                    System.out.println("\t\t\t==== Orders ====");
+                    System.out.println("\n\n\t\t\t================== Order ======================");
                     for (int i = 0; i < orders.size(); i++) {
                         Order order = orders.get(i);
-                        System.out.println((i + 1) + ". " + order.getRestaurant().getName());
+                        System.out.println("\t\t\t" + (i + 1) + ". " + order.getRestaurant().getName());
                         System.out.println("\t\t\tMenu:");
                         for (Menu menu : order.getMenus().keySet()) {
-                            System.out.println(			menu.getName() + " x " + order.getMenus().get(menu));
+                            System.out.println("\t\t\t" + menu.getName() + " x " + order.getMenus().get(menu));
                         }
-                        System.out.println("\t\t\tDistance (Ongkir: 10000/km): " + order.getJarak() + " km");
+                        System.out.println("\t\t\tDistance (Shipping: 10000/km): " + order.getJarak() + " km");
                         System.out.println("\t\t\tTotal Price: " + order.getTotalPrice());
+                        }
+                    pilihan = 3;
+                    System.out.print("\t\t\tWould you like to order again? y/n  ");
+                    String pesan = scanner.nextLine();
+                    if(pesan.equals("n") || pesan.equals("N")) {
+                        pilihan = 3;
+                        System.out.println("\n\t\t\tPlease Make Payment");
+                        System.out.println("\t\t\tThankYou For Order <3 :)");
+                    } else{
+                        pilihan = 0;
                     }
+
                     break;
                 case 3:
                     menuCustomer();

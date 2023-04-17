@@ -5,16 +5,19 @@ public class Restaurant {
     private String address;
     private ArrayList<Menu> menus;
 
+    //Method constructor
     public Restaurant(String name, String address) {
         this.name = name;
         this.address = address;
         this.menus = new ArrayList<>();
     }
 
+    //Method getter untuk mendapatkan nilai name
     public String getName() {
         return name;
     }
 
+    //Method getter untuk mendapatkan nilai address
     public String getAddress() {
         return address;
     }
@@ -27,6 +30,7 @@ public class Restaurant {
 
         return this.menus;
     }
+
     public void addMenu(Menu menu){
 
         this.menus.add(menu);
