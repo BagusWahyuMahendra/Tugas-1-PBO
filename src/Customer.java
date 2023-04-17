@@ -168,6 +168,7 @@ public class Customer {
                     pilihan = 3;
                     System.out.print("\t\t\tWould you like to order again? y/n  ");
                     String pesan = scanner.nextLine();
+                    //Jika n, maka akan muncul pesan di bawah dan tidak melakukan perulangan untuk make order
                     if(pesan.equals("n") || pesan.equals("N")) {
                         pilihan = 3;
                         System.out.println("\n\t\t\tPlease Make Payment");
