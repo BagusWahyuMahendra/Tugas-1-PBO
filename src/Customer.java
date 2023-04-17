@@ -26,21 +26,23 @@ public class Customer {
 
             switch (choice) {
                 case 1:
+                    //Memanggil method signup untuk melakukan pendaftaran
                     signup(scanner);
-                    //menuCustomer();
                     break;
                 case 2:
+                    //Memanggil method login ketika sudah melakukan signup
                     login(scanner);
                     makeOrder();
                     running = false;
-                    //call daftar restaurant dan menu-menu
                     break;
                 case 3:
+                    //Kembali ke menu awal (main)
                     running = false;
                     TampilanAwal back = new TampilanAwal();
                     back.awal();
                     break;
                 default:
+                    //Melakukan validasi ketika salah menginputkan angka
                     System.out.println("\t\t\tInvalid Choice. Please Try Again (Number 1-3)");
                     break;
             }
@@ -49,6 +51,7 @@ public class Customer {
         scanner.close();
     }
 
+    //Method login yang dilakukan Customer
     private static void login(Scanner scanner) {
         int i=0;
         do {
@@ -57,6 +60,7 @@ public class Customer {
             System.out.print("\t\t\tPassword: ");
             String password = scanner.nextLine();
 
+            //Melakukan pengecekan usernam dan password dengan if/pengkondisian
             if (users.containsKey(username) && users.get(username).equals(password)) {  //memeriksa apakah username dan password sesuai
                 System.out.println("\t\t\tLogin successfully!\n\n");
                 i=1;
@@ -66,6 +70,7 @@ public class Customer {
         }while(i==0);
     }
 
+    //Method signup digunakan untuk mendaftar sebagai customer yang belum memiliki akun
     private static void signup(Scanner scanner) {
         System.out.print("\t\t\tUsername: ");
         String username = scanner.nextLine();
@@ -79,6 +84,7 @@ public class Customer {
         System.out.println("\t\t\tSignup was successful! Please login.\n\n");
     }
 
+    //Method yang menyangkut order, baik itu untuk memesan makanan maupun untuk melihat pesanan
     public static void makeOrder() {
         ArrayList<Order> orders = new ArrayList<>();
 
@@ -99,6 +105,7 @@ public class Customer {
                 case 1:
                     Scanner input = new Scanner(System.in);
 
+                    //Menampilkan daftar restaurant ketika memilih untuk make order
                     System.out.println("\n\n\t\t\t================ Restaurants ==================");
                     for (String restaurantName : restaurants.keySet()) {
                         System.out.println("\t\t\t"+restaurantName + " --- " + restaurants.get(restaurantName).getAddress());
@@ -114,6 +121,7 @@ public class Customer {
                     Restaurant restaurant = restaurants.get(restaurantName);
                     Order newOrder = new Order(restaurant);
 
+                    //Menampilkan menu yang ada pada restaurant tersebut
                     String menuInput = "";
                     while (!menuInput.equals("n")) {
                         System.out.println("\n\n\t\t\t=======\t\t " + restaurant.getName() + " \t\t=======");
@@ -145,6 +153,7 @@ public class Customer {
 
                     break;
                 case 2:
+                    //Menampilkan data order dari pesanan yang dibuat Customer
                     System.out.println("\n\n\t\t\t================== Order ======================");
                     for (int i = 0; i < orders.size(); i++) {
                         Order order = orders.get(i);
