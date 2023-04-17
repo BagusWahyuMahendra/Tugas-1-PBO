@@ -23,6 +23,7 @@ public class Restaurant {
         return address;
     }
 
+    //Melakukan ovveride dengan toString
     @Override
     public String toString() {
         return name +" "+ address;
