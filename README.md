@@ -2,7 +2,6 @@
 Membuat program dari java untuk membeli makanan online berbasis command line
 
 Program Food Order Online OOP Java
-Source Code berada di branch 'master'
 
 Program Online Food Order merupakan program yang menggunakan konsep pemrograman berorientasi objek atau OOP (Object Oriented Programming) menggunakan salah satu bahasa pemrograman, yakni Java.
 
@@ -15,3 +14,9 @@ Setelah selesai membuat pesanan, Customer dapat melihat data order yang berisika
 
 
 Lebih jelasnya, dapat melihat UML (Unified Modelling Language), yakni metode dalam pemodelan secara visual yang digunakan sebagai sarana perancangan sistem berorientasi objek di bawah ini.
+
+
+
+
+
+NB : Source Code berada di branch 'master'
