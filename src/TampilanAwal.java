@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class TampilanAwal {
     public static void main(String[] args){
+        //Memanggil method inisiasiRestaurant agar langsung melakukan inisiasi saat awal membuka program
         Admin.inisiasiRestaurant();
         awal();
     }
