@@ -17,6 +17,7 @@ public class Order {
         return this.restaurant;
     }
 
+    //Method yang berisikan HashMap untuk menyimpan data
     public HashMap<Menu, Integer> getMenus(){
         return this.menus;
     }
