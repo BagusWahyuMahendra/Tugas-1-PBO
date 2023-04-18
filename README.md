@@ -88,3 +88,47 @@ Gambar di atas merupakan tampilan saat ingin menambahkan suatu restaurant. Admin
 
 
 Gambar di atas merupakan tampilan saat ingin menghapus suatu restaurant. Admin akan diminta memasukkan nama restaurant yang ingin dihapus.
+
+
+4. Masuk Sebagai Customer
+
+
+![Screenshot 2023-04-18 203137](https://user-images.githubusercontent.com/114908291/232785200-acb250bc-a744-42df-82d0-0592334a35dc.png)
+
+
+Gambar di atas merupakan tampilan awal saat masuk sebagai Customer. Terdapat menu Sign Up dan Login yang dimana Customer diharapkan melakukan Sign up terlebih dahulu dan baru melanjutkan dengan melakukan login. 
+
+
+
+![Screenshot 2023-04-18 203152](https://user-images.githubusercontent.com/114908291/232785575-72fe57ac-0ba7-4ad4-b256-28215e7f80e7.png)
+
+
+Saat memilih ingin sign up, customer diminta untuk memasukkan username dan password yang ingin digunakan untuk melakukan login. Setelah melakukan sign up, customer dapat melakukan login.
+
+
+![Screenshot 2023-04-18 203226](https://user-images.githubusercontent.com/114908291/232785834-295afb06-7ead-46ca-8eca-e9b5d2d40cbb.png)
+
+
+Gambar di atas merupakan gambar ketika Customer berhasil melakukan login. Selanjutnya Customer dapat memilih menu untuk membuat pesanan, melihat pesanan, atau ingin kembali ke tampilan awal. 
+
+
+![Screenshot 2023-04-18 203328](https://user-images.githubusercontent.com/114908291/232786114-0b3a9049-f9ab-4e17-9b7c-12708c8d34d6.png)
+
+
+
+
+![Screenshot 2023-04-18 203405](https://user-images.githubusercontent.com/114908291/232786147-94802960-908c-4204-b1f6-6169598890a7.png)
+
+
+
+Gambar di atas merupakan gambar ketika Customer berhasil membuat pesanan. Di awali dengan memasukkan nama restaurant yang ingin dilihat menunya, dan memasukkan no menu, jumlah atau quantity dan ditanyakan kembali apakah ingin memesan menu lain atau tidak. Jika tidak maka Customer diperintahkan untuk memasukkan jarak rumah ke restaurantnya dalam satuan kilometer. 
+
+
+![Screenshot 2023-04-18 203419](https://user-images.githubusercontent.com/114908291/232786609-67bb427c-0e95-457b-9447-79504c0d260d.png)
+
+
+Gambar di atas merupakan gambar ketika Customer ingin melihat pesanan yang telah dipesan sebelumnya. Dan selanjutnya, apabila Customer ingin memesan lagi, maka dapat memasukkan huruf "y", jika tidak maka dapat memasukkan huruf "n" dan akan muncul pesan seperti berikut.
+
+
+
+![Screenshot 2023-04-18 203458](https://user-images.githubusercontent.com/114908291/232786999-a81323b2-3555-478c-a6ae-297a29d7a2e3.png)
