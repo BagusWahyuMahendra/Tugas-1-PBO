@@ -173,6 +173,7 @@ public class Customer {
                         pilihan = 3;
                         System.out.println("\n\t\t\tPlease Make Payment");
                         System.out.println("\t\t\tThankYou For Order <3 :)");
+                        break;
                     } else{
                         pilihan = 0;
                     }
