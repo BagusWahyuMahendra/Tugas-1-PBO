@@ -5,7 +5,12 @@ NIM     : 2205551002
 
 Kelas   : PBO (D)
 
+
+NB : Source Code berada di branch 'master'
+
+
 Membuat program dari java untuk membeli makanan online berbasis command line
+
 
 Program Food Order Online OOP Java
 
@@ -29,8 +34,6 @@ Lebih jelasnya, dapat melihat UML (Unified Modelling Language), yakni metode dal
 ![Screenshot 2023-04-17 221554](https://user-images.githubusercontent.com/114908291/232515461-5b896c52-caa5-43e9-831a-95963320ae7a.png)
 
 
-
-NB : Source Code berada di branch 'master'
 
 
 Tampilan Program Food Order Online OOP Java
