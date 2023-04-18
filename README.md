@@ -34,3 +34,29 @@ NB : Source Code berada di branch 'master'
 
 
 Tampilan Program Food Order Online OOP Java
+
+1. Tampilan Awal
+
+
+![Screenshot 2023-04-18 202616](https://user-images.githubusercontent.com/114908291/232780671-4bf4e1e2-2a26-4691-9e4c-cfd542c28806.png)
+
+
+Gambar di atas merupakan tampilan awal dari Program Food Order Online FOODTIFY. Terdapat dua pilihan, yakni masuk sebagai admin atau customer.
+
+2. Masuk Sebagai Admin
+
+
+![Screenshot 2023-04-18 202653](https://user-images.githubusercontent.com/114908291/232780985-5e8d2954-12d5-4e4f-a183-c4713fba1769.png)
+
+
+Gambar di atas merupakan tampilan saat berhasil masuk sebagai admin. Di mana username dan passwordnya adalah baguswahyu dan 22205551002. Selanjutnya dapat melakukan beberapa tugas admin.
+
+
+![Screenshot 2023-04-18 203103](https://user-images.githubusercontent.com/114908291/232781477-b8354f29-a154-4ecf-9bad-65b53dffc367.png)
+
+
+Gambar di atas merupakan tampilan saat admin gagal masuk sebagai admin. Admin akan diperintahkan untuk mengisi ulang username dan password dengan benar.
+
+
+3. Tugas Admin
+
