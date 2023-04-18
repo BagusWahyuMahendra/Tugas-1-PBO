@@ -63,3 +63,28 @@ Gambar di atas merupakan tampilan saat admin gagal masuk sebagai admin. Admin ak
 
 3. Tugas Admin
 
+
+![Screenshot 2023-04-18 205113](https://user-images.githubusercontent.com/114908291/232782951-e5914bb1-ea99-49aa-9c2f-d54d23c4e908.png)
+
+
+Gambar di atas merupakan menu yang dapat dipilih Admin dapat melakukan tugasnya. Selanjutnya admin dapat melihat daftar restoran dengan memasukkan pilihan 1
+
+
+
+![Screenshot 2023-04-18 202854](https://user-images.githubusercontent.com/114908291/232783162-c1477f02-791c-4ecd-ac7e-6145c48c4fe6.png)
+
+
+Setelah memasukkan pilihan satu, maka akan muncul daftar restaurant yang sudah ada sebelumnya beserta menu dan harganya. Selanjutnya admin dapat back kembali ke menu admin dan dapat menambahkan restaurant atau add restaurant dengan memasukkan pilihan 2.
+
+
+
+![Screenshot 2023-04-18 203012](https://user-images.githubusercontent.com/114908291/232783498-7cfee509-353e-490a-bc99-f6f5ef275954.png)
+
+
+Gambar di atas merupakan tampilan saat ingin menambahkan suatu restaurant. Admin akan diminta memasukkan nama restaurant, alamat restaurany, menu-menu beserta harganya. Selanjutnya admin juga dapat menghapus restaurant atau delete restaurant dengan memasukkan pilihan pada menu no 3.
+
+
+![Screenshot 2023-04-18 205618](https://user-images.githubusercontent.com/114908291/232784315-383d3640-8021-4956-98b3-adf24ef2fffb.png)
+
+
+Gambar di atas merupakan tampilan saat ingin menghapus suatu restaurant. Admin akan diminta memasukkan nama restaurant yang ingin dihapus.
