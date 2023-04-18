@@ -1,4 +1,8 @@
 # Tugas-1-PBO
+Nama    : I Made Bagus Wahyu Mahendra
+NIM     : 2205551002
+Kelas   : PBO (D)
+
 Membuat program dari java untuk membeli makanan online berbasis command line
 
 Program Food Order Online OOP Java
@@ -25,3 +29,6 @@ Lebih jelasnya, dapat melihat UML (Unified Modelling Language), yakni metode dal
 
 
 NB : Source Code berada di branch 'master'
+
+
+Tampilan Program Food Order Online OOP Java
